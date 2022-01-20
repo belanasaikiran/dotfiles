@@ -29,3 +29,4 @@ install the follwing commands
 [Alacritty Begineers Guide](https://www.youtube.com/watch?v=76GbxnD8wnM&list=PLnur5_dvCveFGV8tKbH9sdqOSBUlFNQrR&index=18)
 
 
+[rofi-emoji](https://github.com/Mange/rofi-emoji)
