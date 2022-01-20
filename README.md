@@ -23,3 +23,9 @@ To check available storage:
 install the follwing commands
 
 `ncdu` , `duf` , `df`
+
+
+
+[Alacritty Begineers Guide](https://www.youtube.com/watch?v=76GbxnD8wnM&list=PLnur5_dvCveFGV8tKbH9sdqOSBUlFNQrR&index=18)
+
+
