@@ -15,3 +15,11 @@ sudo pacman -S lxappearance``
 To configure displays:
 
 run `arandr`
+
+
+
+
+To check available storage:
+install the follwing commands
+
+`ncdu` , `duf` , `df`
