@@ -38,7 +38,7 @@ font pango:monospace 10
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # use MOD + ESC for power menu
-bindsym $mod+Escape exec --no-startup-id sh ~/.config/polybar/nord/blocks/scripts/powermenu.sh
+#bindsym $mod+Escape exec --no-startup-id sh ~/.config/polybar/nord/blocks/scripts/powermenu/powermenu.sh
 
 # ----START ----> Polybar
 #exec_always --no-startup-id ~/.config/polybar/v1/launch.sh
@@ -47,7 +47,7 @@ bindsym $mod+Escape exec --no-startup-id sh ~/.config/polybar/nord/blocks/script
 exec --no-startup-id nm-applet
 
 #start kitty
-exec --no-startup-id kitty -name dropdown 
+#exec --no-startup-id kitty -name dropdown 
 
 #  _   __ _______   __ ______ _____ _   _______ _____ _   _ _____ _ _____ 
 # | | / /|  ___\ \ / / | ___ \_   _| \ | |  _  \_   _| \ | |  __ ( )  ___|
@@ -100,9 +100,10 @@ bindcode $mod+40 exec "rofi -show drun -show-icons"
 #ROFI config for network-menu-powermenu
 set $mod Mod4
 set $Alt Mod1
-bindsym $mod+n exec "~/.config/rofi/rofi/rofi-wifi-menu/rofi-wifi-menu.sh"
-bindsym $mod+m exec --no-startup-id menu_mpd
+bindsym $mod+m exec --no-startup-id ~/.config/rofi/bin/applet_backlight
+bindsym $mod+n exec --no-startup-id ~/.config/rofi/bin/applet_network
 bindsym $mod+x exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
+#bindsym $mod+d exec --no-startup-id ~/.config/rofi/bin/menu_apps
 #etc
 
 
@@ -236,14 +237,32 @@ bindsym $mod+u [class="dropdown"] scratchpad show
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
+#bar {
         #status_command i3status
-		status_command i3status -c /home/saikiran/.config/i3status/i3status.conf
-		 colors {
-        background #323c48
+#		status_command i3status -c /home/saikiran/.config/i3status/i3status.conf
+   #     position bottom
+#}
+
+# we are using bumblebee-status, refer the below link to install and setup:
+# https://github.com/tobi-wan-kenobi/bumblebee-status
+
+bar {
+	status_command /home/saikiran/.local/bin/bumblebee-status \
+		-m  nic cpu memory pasink pasource brightness battery time dunstctl \
+                -p time.format="%H:%M" memory.format={used} nic.format={ip},{ssid} indicator.format=%NumLock\
+		-t nord-powerline
+    colors {
+        background #434c5e
         statusline #ffffff
+        separator #ffffff
+			   			   #BORDER #BG	   #TEXT
+        focused_workspace  #434c5e #285577 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+        binding_mode       #2f343a #900000 #ffffff
     }
-        position bottom
+	position bottom
 }
 
 
@@ -258,8 +277,8 @@ bindsym $mod+shift+x exec i3lock
 
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
 
 
 # Touchpad controls
@@ -286,13 +305,13 @@ exec --no-startup-id nitrogen --restore
 
 exec --no-startup-id dunst
 
-exec --no-startup-id picom
+#exec --no-startup-id picom
 
-exec --no-startup-id sh ~/.config/polybar/launch.sh --blocks
+#exec --no-startup-id sh ~/.config/polybar/launch.sh --blocks
 
 exec --no-startup-id sh ~/.screenlayout/full-hd.sh
 
-exec --no-startup-id fetchcord --start
+#exec --no-startup-id fetchcord --start
 
 # take a screenshot
 #bindsym Print exec ~/sh/full-ss.sh
