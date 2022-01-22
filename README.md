@@ -36,7 +36,9 @@ install the follwing commands
 
 Flameshot is a decent alternative.
 
-```bindsym Print       exec flameshot full
+```
+bindsym Print       exec flameshot full
+
 bindsym Shift+Print exec flameshot gui
 ```
 
