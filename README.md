@@ -24,6 +24,11 @@ install the follwing commands
 
 `ncdu` , `duf` , `df`
 
+------
+
+Window Managers:
+
+i3:
 
 
 [Alacritty Begineers Guide](https://www.youtube.com/watch?v=76GbxnD8wnM&list=PLnur5_dvCveFGV8tKbH9sdqOSBUlFNQrR&index=18)
@@ -31,6 +36,20 @@ install the follwing commands
 
 [rofi-emoji](https://github.com/Mange/rofi-emoji)
 
+------
+**For Brightness controller** keys:
+
+My solution. It is tested on Ubuntu 20.04.
+
+sudo apt install light
+
+sudo chmod +s /usr/bin/light
+
+Add to i3 config:
+
+bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
+------
 
 **For ScreenShots:**
 
