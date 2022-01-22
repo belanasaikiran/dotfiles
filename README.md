@@ -91,3 +91,13 @@ sudo apt install tree -y
 ```
 
 -----
+
+
+**for detailed list:**
+
+```
+sudo apt install colorls
+
+#in you .bashrc or .zshrc, add the following line:
+alias ls=colorls
+```
