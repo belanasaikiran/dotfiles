@@ -58,3 +58,13 @@ neofetch source ~/path-to-img-file
 You can configure by commenting useless info by editing `~/.config/neofetch/config.conf` file
 
 -----
+
+TREE:
+
+to list out all files from current dir to sub dir install `tree`
+
+```
+sudo apt install tree -y
+```
+
+-----
