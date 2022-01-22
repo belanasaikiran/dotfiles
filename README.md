@@ -1,6 +1,12 @@
 # dotfiles
 This Repo contains dotfiles configs
 
+**ZSH Auto Configure**
+
+[ZSH4HUMANS](https://github.com/romkatv/zsh4humans)
+
+
+-----
 
 Install: 
 
