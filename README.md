@@ -41,9 +41,11 @@ i3:
 
 My solution. It is tested on Ubuntu 20.04.
 
+```
 sudo apt install light
 
 sudo chmod +s /usr/bin/light
+```
 
 Add to i3 config:
 ```
