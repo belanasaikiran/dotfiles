@@ -43,3 +43,18 @@ bindsym Shift+Print exec flameshot gui
 ```
 
 You can use option -p /path/to/directory to skip selecting the save directory.
+
+-----
+
+
+NEOFETCH:
+
+custom logo:
+
+```
+neofetch source ~/path-to-img-file
+```
+
+You can configure by commenting useless info by editing `~/.config/neofetch/config.conf` file
+
+-----
