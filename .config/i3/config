@@ -89,6 +89,24 @@ bindcode $mod+40 exec "rofi -show drun -show-icons"
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+
+#rofi emoji 
+#bindsym $mod+shift+. exec "rofi -show emoji -modi emoji"
+
+#rofi-wifi-menu
+#bindsym $mod+shift+n exec "$WIFI_MENU"
+
+
+#ROFI config for network-menu-powermenu
+set $mod Mod4
+set $Alt Mod1
+bindsym $mod+n exec "~/.config/rofi/rofi/rofi-wifi-menu/rofi-wifi-menu.sh"
+bindsym $mod+m exec --no-startup-id menu_mpd
+bindsym $mod+x exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
+#etc
+
+
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -222,10 +240,10 @@ bar {
         #status_command i3status
 		status_command i3status -c /home/saikiran/.config/i3status/i3status.conf
 		 colors {
-        background #285577
+        background #323c48
         statusline #ffffff
     }
-        position top
+        position bottom
 }
 
 
@@ -242,6 +260,7 @@ bindsym $mod+shift+x exec i3lock
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -276,13 +295,12 @@ exec --no-startup-id sh ~/.screenlayout/full-hd.sh
 exec --no-startup-id fetchcord --start
 
 # take a screenshot
-bindsym Print exec ~/sh/full-ss.sh
+#bindsym Print exec ~/sh/full-ss.sh
 
-# take screenshot of focused window
-bindsym $mod+Print exec ~/sh/cur-win-ss.sh
 
-# take screenshot of selected area 
-bindsym --release ctrl+Print exec ~/sh/area-ss.sh
+# take screenshot with flameshot
+bindsym Print exec  flameshot full -p ~/Pictures/Screenshots/
 
 #window compositor
 exec --no-startup-id picom -f
+
