@@ -30,3 +30,14 @@ install the follwing commands
 
 
 [rofi-emoji](https://github.com/Mange/rofi-emoji)
+
+
+**For ScreenShots:**
+
+Flameshot is a decent alternative.
+
+```bindsym Print       exec flameshot full
+bindsym Shift+Print exec flameshot gui
+```
+
+You can use option -p /path/to/directory to skip selecting the save directory.
