@@ -17,16 +17,21 @@ set $mod Mod4
 
 set $mod Mod4
 
-for_window [class="^.*"] border pixel 2
-
+for_window [class="^.*"] border pixel 3
+#to change window border, change the last hex-color-value only
+client.focused #555555 #555555 #ffffff #2e9ef4  #a3be8c
 
 #############################
 ### settings for i3-gaps: ###
 #############################
 
+####################### To install: #########################
+#### sudo add-apt-repository -y ppa:regolith-linux/stable ###
+#### sudo apt install i3-gaps       ########################
+
 # Set inner/outer gaps
-#gaps inner 10
-#gaps outer -4
+gaps inner 10
+gaps outer -4
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
