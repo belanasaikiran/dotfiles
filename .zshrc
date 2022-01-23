@@ -127,8 +127,10 @@ alias vi=nvim
 #
  #notes
 alias notes="cd /home/saikiran/Desktop/notes/"
- #git-token
-alias git-token="echo "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""
+ 
+ 
+ #git-token: add git token below in the quotes
+alias git-token="echo ""
 
 alias wifi="/home/saikiran/.config/rofi/rofi-wifi-menu/rofi-wifi-menu.sh"
 
