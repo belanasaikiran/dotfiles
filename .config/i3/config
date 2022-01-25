@@ -263,7 +263,8 @@ bindsym $mod+u [class="dropdown"] scratchpad show
 #}
 
 # we are using bumblebee-status, refer the below link to install and setup:
-# https://github.com/tobi-wan-kenobi/bumblebee-status
+###############################  BUMBLEBEE - STATUS ####################################
+############# https://github.com/tobi-wan-kenobi/bumblebee-status #######################
 
 bar {
 	status_command /home/saikiran/.local/bin/bumblebee-status \
