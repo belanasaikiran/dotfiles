@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-## Author  : Aditya Shakya
-## Mail    : adi1090x@gmail.com
-## Github  : @adi1090x
-## Twitter : @adi1090x
+## Author  : saikiran belana
+## Github  : belanasaikiran
 
 style="$($HOME/.config/rofi/applets/menu/style.sh)"
 
@@ -27,7 +25,7 @@ if (ping -c 1 archlinux.org || ping -c 1 google.com || ping -c 1 bitbucket.org |
         else
             connected=""
         fi
-	active="-a 0"
+	#active="-a 0"
 	SSID="﬉ $(iwgetid -r)"
 	PIP="$(wget --timeout=30 http://ipinfo.io/ip -qO -)"
 	fi
@@ -39,7 +37,7 @@ else
 fi
 
 ## Icons
-bmon=""
+bmon="net usage"
 launch_cli=""
 launch=""
 

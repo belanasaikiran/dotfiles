@@ -19,7 +19,7 @@ set $mod Mod4
 
 for_window [class="^.*"] border pixel 3
 #to change window border, change the last hex-color-value only
-client.focused #555555 #555555 #ffffff #2e9ef4  #a3be8c
+client.focused #555555 #555555 #ffffff #2e9ef4  #bf616a
 
 #############################
 ### settings for i3-gaps: ###
@@ -59,7 +59,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # use MOD + ESC for power menu
 #bindsym $mod+Escape exec --no-startup-id sh ~/.config/polybar/nord/blocks/scripts/powermenu/powermenu.sh
 
-# ----START ----> Polybar
+
+
+####################################################
+#############----START  Polybar----#################
+####################################################
+
 #exec_always --no-startup-id ~/.config/polybar/v1/launch.sh
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -179,11 +184,11 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: "
+set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
-set $ws4 "4 "
-set $ws5 "5"
+set $ws4 "4 "
+set $ws5 "5 "
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -263,13 +268,12 @@ bindsym $mod+u [class="dropdown"] scratchpad show
 #}
 
 # we are using bumblebee-status, refer the below link to install and setup:
-###############################  BUMBLEBEE - STATUS ####################################
-############# https://github.com/tobi-wan-kenobi/bumblebee-status #######################
+# https://github.com/tobi-wan-kenobi/bumblebee-status
 
 bar {
 	status_command /home/saikiran/.local/bin/bumblebee-status \
-		-m  nic cpu memory pasink pasource brightness battery time dunstctl \
-                -p time.format="%H:%M" memory.format={used} nic.format={ip},{ssid} indicator.format=%NumLock\
+		-m  nic cpu memory pasink pasource bluetooth brightness battery time dunstctl \
+                -p time.format="%H:%M:%S" memory.format={used} nic.format={ip},{ssid} indicator.format=%NumLock battery.warning \
 		-t nord-powerline
     colors {
         background #434c5e
