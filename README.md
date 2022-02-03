@@ -105,6 +105,8 @@ sudo apt install tree -y
 
 ```
 sudo apt install colorls
+#arch lnux
+#sudo pacman -S colorls
 
 #in you .bashrc or .zshrc, add the following line:
 alias ls=colorls
