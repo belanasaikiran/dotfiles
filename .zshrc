@@ -130,7 +130,7 @@ alias notes="cd /home/saikiran/Desktop/notes/"
  
  
  #git-token: add git token below in the quotes
-alias git-token="echo ""
+alias git-token="echo ''"
 
 alias wifi="/home/saikiran/.config/rofi/rofi-wifi-menu/rofi-wifi-menu.sh"
 
