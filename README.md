@@ -111,3 +111,10 @@ sudo apt install colorls
 #in you .bashrc or .zshrc, add the following line:
 alias ls=colorls
 ```
+
+
+**SSH PASSWORDLESS:**
+
+```
+sshpass "password" ssh user@ip
+```
