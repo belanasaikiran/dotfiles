@@ -118,3 +118,6 @@ alias ls=colorls
 ```
 sshpass "password" ssh user@ip
 ```
+
+
+<!-- Switch to kali -->
