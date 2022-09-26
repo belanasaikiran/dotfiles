@@ -26,19 +26,19 @@ for_window [class="^.*"] border pixel 3
 ##########
 
 # set colors from .Xresources with fallback
-set_from_resource $blue         color7  #01303F
-set_from_resource $black        color0  #000000
-set_from_resource $yellow        color8  #f5ff22
-set_from_resource $white        color21 #ffffff
-set_from_resource $red       color1  #bf616a
-set_from_resource $blue    color4  #2e8eae
+set_from_resource $blue       color7  #01303F
+set_from_resource $black      color0  #000000
+set_from_resource $yellow     color8  #f5ff22
+set_from_resource $white      color21 #ffffff
+set_from_resource $red        color1  #bf616a
+set_from_resource $cyan       color4  #2e8eae
 
 # set window colors     border  backgr. text    indicator   child_border
 client.focused          $blue   $white  $blue   $white      $blue
 client.focused_inactive $blue   $blue   $white  $white      $bg
 client.unfocused        $black  $black  $white  $white      $bg
-client.urgent           $red $red $white  $yellow      $red
-client.placeholder      $black  $black  $yellow  $white      $black
+client.urgent           $red    $red    $white  $yellow     $red
+client.placeholder      $black  $black  $yellow  $white     $black
 client.background       $blue
 
 
@@ -284,9 +284,9 @@ bar {
             separator $bg
             statusline shade
 
-            focused_workspace       $blue $yellow $blue
-            inactive_workspace      $blue $blue $yellow
-            urgent_workspace        $ $red $red
+            focused_workspace       $blue   $yellow   $blue
+            inactive_workspace      $blue   $blue     $yellow
+            urgent_workspace        $white  $red      $red
         }
 }
 
