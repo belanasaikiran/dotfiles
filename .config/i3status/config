@@ -1,0 +1,128 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 5
+        color_good = "#aaff00"
+        color_degraded = "#00dddd"
+        color_bad = "#ff2200"
+}
+
+#order += "ipv6"
+order += "disk /"
+order += "disk /home"
+#order += "run_watch DHCP"
+#order += "run_watch VPN"
+order += "wireless wlan0"
+order += "ethernet eno16777736"
+order += "battery all"
+order += "cpu_temperature 0"
+order += "cpu_usage"
+order += "memory"
+order += "load"
+order += "tztime localdate"
+order += "tztime localtime"
+order += "volume master"
+
+disk "/" {
+        format = "  %avail "
+        prefix_type = custom
+}
+
+disk "/home" {
+        format = "  %avail "
+        prefix_type = custom
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPN {
+        pidfile = "/var/run/vpnc/pid"
+}
+
+
+wireless wlan0 {
+        format_up = "W: (%quality at %essid, %bitrate) %ip"
+        format_down = "W: down"
+}
+
+
+
+
+ethernet eno16777736 {
+        # if you use %speed, i3status requires root privileges
+        format_up = "  %ip "
+        format_down = "  "
+}
+	battery all {
+        format = "%status %percentage %remaining"
+        integer_battery_capacity = true
+        threshold_type = "percentage"
+        low_threshold = "15"
+        # f58e nf-mdi-battery_plus; f58b nf-mdi-battery_minus; f578 nf-mdi-battery
+        status_chr = " CHR"
+        status_bat = " BAT"
+        status_full = " FULL"
+}
+
+cpu_temperature 0 {
+        format = "  %degrees °C "
+        max_threshold = 42
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
+}
+
+cpu_usage {
+        format = "  %usage "
+}
+
+load {
+        format = "  %1min "
+        max_threshold = 5
+}
+
+tztime localdate {
+        format = "  %Y-%m-%d "
+}
+
+tztime localtime {
+        format = " %H:%M "
+}
+
+	volume master {
+        # fa7d, nf-mdi-volume_high
+        format = "墳 %volume"
+        # fc5d, nf-mdi-volume_mute
+        # format_muted = "ﱝ %volume" ??? gets reversed
+        format_muted = "%volume ﱝ"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+	battery all {
+        format = "%status %percentage %remaining"
+        integer_battery_capacity = true
+        threshold_type = "percentage"
+        low_threshold = "15"
+        # f58e nf-mdi-battery_plus; f58b nf-mdi-battery_minus; f578 nf-mdi-battery
+        status_chr = " CHR"
+        status_bat = " BAT"
+        status_full = " FULL"
+}
+
+
+
+	memory {
+        # f85a, nf-mdi-memory
+        format = " %used %available"
+        threshold_degraded = "1G"
+        threshold_critical = "256M"
+}

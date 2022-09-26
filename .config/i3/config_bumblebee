@@ -187,12 +187,12 @@ bindsym $mod+a focus parent
 set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
-set $ws4 "4: "
-set $ws5 "5: "
-set $ws6 "6: "
-set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: "
+set $ws4 "4 "
+set $ws5 "5 "
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
 set $ws10 "10: "
 
 # switch to workspace
@@ -261,12 +261,33 @@ bindsym $mod+u [class="dropdown"] scratchpad show
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    status_command i3status
-	#	status_command i3status -c /home/sanju/.config/i3status/i3status.conf
-	#	position bottom
-}
+#bar {
+        #status_command i3status
+#		status_command i3status -c /home/saikiran/.config/i3status/i3status.conf
+   #     position bottom
+#}
 
+# we are using bumblebee-status, refer the below link to install and setup:
+# https://github.com/tobi-wan-kenobi/bumblebee-status
+
+bar {
+	status_command /home/saikiran/.local/bin/bumblebee-status \
+		-m  nic cpu memory pasink pasource bluetooth brightness battery time dunstctl \
+                -p time.format="%H:%M:%S" memory.format={used} nic.format={ip},{ssid} indicator.format=%NumLock battery.warning \
+		-t nord-powerline
+    colors {
+        background #434c5e
+        statusline #ffffff
+        separator #ffffff
+			   			   #BORDER #BG	   #TEXT
+        focused_workspace  #434c5e #d8dee9 #434c5e
+        active_workspace   #434c5e #d8dee9 #000000
+        inactive_workspace #434c53 #434c5e #d8dee9
+        urgent_workspace   #2f343a #bf616a #d8dee9
+        binding_mode       #2f343a #bf616a #d8dee9
+    }
+	position top
+}
 
 
 #open google chrome in workspace 1
@@ -326,15 +347,3 @@ bindsym Print exec  flameshot full -p ~/Pictures/Screenshots/
 #window compositor
 exec --no-startup-id picom -f
 
-
-
-#enable touchpad tap to click
-exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-
-
-
-# Resize
-bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
-bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
-bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
-bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
