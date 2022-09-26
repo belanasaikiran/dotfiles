@@ -121,3 +121,53 @@ sshpass "password" ssh user@ip
 
 
 <!-- Switch to kali -->
+
+
+
+### Resizing windows in i3 (without resize mode)
+Found at [https://unix.stackexchange.com/questions/255344/resizing-windows-in-i3-without-resize-mode](https://unix.stackexchange.com/questions/255344/resizing-windows-in-i3-without-resize-mode)
+Best solution:
+
+Go to ~/.i3/config and open the file.
+
+Paste following code at the end:
+
+```
+bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
+bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
+bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
+bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
+```
+
+Save it and run `i3-msg` reload.
+
+
+
+## Enable touchpad tap to click in i3
+Found at [https://major.io/2021/07/18/tray-icons-in-i3/](https://major.io/2021/07/18/tray-icons-in-i3/)
+
+> Solution:
+  Let’s make it permanent in the i3 configuration. Open up ~/.config/i3/config and add a line:
+
+  ```exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1```
+  
+> Via the xorg configuration method
+  This method affects all window managers on your machine, so keep that in mind. Make a new file at   /etc/X11/xorg.conf.d/touchpad-tap.conf and add the following:
+```
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        Option "Tapping" "on"
+EndSection
+```
+We’re telling xorg to apply this configuration to any libinput touchpad on the system (but you could use the specific name of the device here if you want), and we’re enabling the tapping option.
+
+You can make this change effective immediately with:
+
+```xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1```
+The xorg configuration change takes effect when you log out of your X session or you reboot your computer.
+  
+  
+  
