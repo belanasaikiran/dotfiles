@@ -15,8 +15,8 @@ general {
 }
 
 #order += "ipv6"
-order += "disk /"
-order += "disk /home"
+#order += "disk /"
+#order += "disk /home"
 #order += "run_watch DHCP"
 #order += "run_watch VPN"
 # the wifi name should be the same as below function
@@ -30,17 +30,28 @@ order += "wireless wlp0s20f3"
 
 order += "battery all"
 order += "cpu_temperature 0"
-order += "cpu_usage"
+#order += "cpu_usage"
 order += "memory"
 #order += "load"
 order += "volume master"
 order += "tztime localdate"
 order += "tztime localtime"
+order += "disk /"
 
+
+
+# just to display my name:
 disk "/" {
-        format = "  %avail "
-        prefix_type = custom
+        format = "  Saikiran Belana "
 }
+
+
+
+# Original 
+#disk "/" {
+#        format = "  %avail "
+#        prefix_type = custom
+#}
 
 disk "/home" {
         format = "  %avail "
@@ -58,7 +69,7 @@ run_watch VPN {
 # You need to add wifi device name here:
 # Example wlan0 or wlp0s20f3
 wireless wlp0s20f3{
-        format_up = "  (%quality at %essid, %bitrate) %ip"
+        format_up = "  (%quality at %essid, %bitrate)"
         format_down = "睊 down"
 }
 
@@ -132,7 +143,7 @@ tztime localtime {
 
 	memory {
         # f85a, nf-mdi-memory
-        format = "  %used %available "
+        format = "  %available "
         threshold_degraded = "6G"
         threshold_critical = "4G"
 }
