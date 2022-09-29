@@ -39,6 +39,12 @@ i3:
 
 ---
 
+### Fonts Used:
+
+Icons + Font : [https://fontawesome.com/v5/cheatsheet/free/regular](https://fontawesome.com/v5/cheatsheet/free/regular)
+
+---
+
 **For Brightness controller** keys:
 
 My solution. It is tested on Ubuntu 20.04.
@@ -161,3 +167,15 @@ You can make this change effective immediately with:
 `xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1`
 
 The xorg configuration change takes effect when you log out of your X session or you reboot your computer.
+
+## Lock Screen - Replacing i3 with Betterlockscreen
+
+https://github.com/betterlockscreen/betterlockscreen.git
+
+> Make sure you install all the dependencies they mentioned
+
+## Rofi for app launcher, power menu, music
+
+[https://github.com/adi1090x/rofi.git](https://github.com/adi1090x/rofi.git)
+
+> Run the script mentioned here
