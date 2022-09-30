@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+
+
+## bash script for installing fonts --
+
+
 ## Colors ----------------------------
 Color_Off='\033[0m'
 BBlack='\033[1;30m' BRed='\033[1;31m'    BGreen='\033[1;32m' BYellow='\033[1;33m'
