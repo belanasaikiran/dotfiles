@@ -48,7 +48,7 @@ disk "/" {
 
 
 
-# Original 
+# Original
 #disk "/" {
 #        format = "  %avail "
 #        prefix_type = custom
@@ -138,5 +138,4 @@ tztime localtime {
         # f85a, nf-mdi-memory
         format = "  %available "
         threshold_degraded = "6G"
-        threshold_critical = "4G"
-}
+  
