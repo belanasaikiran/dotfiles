@@ -179,3 +179,19 @@ https://github.com/betterlockscreen/betterlockscreen.git
 [https://github.com/adi1090x/rofi.git](https://github.com/adi1090x/rofi.git)
 
 > Run the script mentioned here
+
+
+
+## Turn Off/On External Display for i3 Terminal:
+
+> Turn `ON` Display
+```
+# xrandr --output <LAPTOP_DISPLAY_NAME> --auto --output <EXTERNAL_HDMI_DISPLAY_NAME> --auto --right-of eDP
+xrandr --output eDP1 --auto --output HDMI-A-0 --auto --right-of eDP
+```
+
+> Turn `OFF` Display
+```
+# xrandr --output <EXTERNAL_HDMI_DISPLAY_NAME>
+xrandr --output HDMI-A-0 --off
+```
